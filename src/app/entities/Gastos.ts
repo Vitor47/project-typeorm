@@ -2,11 +2,14 @@ import {
     Entity,
     Column,
     PrimaryGeneratedColumn,
+    ManyToMany,
+    JoinTable,
     CreateDateColumn,
     UpdateDateColumn,
   } from 'typeorm';
-    
-  @Entity('users')
+
+  import Categorias from "./Categorias"
+  @Entity('gastos')
   class Gastos {
     @PrimaryGeneratedColumn('increment')
     id: number;
@@ -14,7 +17,7 @@ import {
     @Column('varchar', {length: 255, nullable: false})
     descricao: string;
 
-    @Column('number', {nullable: false})
+    @Column('float', {nullable: false})
     valor: number;
 
     @Column()
@@ -28,6 +31,9 @@ import {
   
     @UpdateDateColumn()
     updated_at: Date;
-  }
 
+    @ManyToMany(() => Categorias)
+    @JoinTable()
+    categories: Categorias[]
+  } 
   export default Gastos;

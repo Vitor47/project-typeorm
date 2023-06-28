@@ -20,12 +20,6 @@ export class CreateCategoriasTable1687907610389 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
-                        name: 'active',
-                        type: 'boolean',
-                        default: false,
-                        isNullable: false,
-                    },
-                    {
                         name: 'created_at',
                         type: 'timestamp',
                         default: 'now()',

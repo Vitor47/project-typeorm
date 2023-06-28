@@ -21,14 +21,11 @@ export class CreateGastosTable1687907141169 implements MigrationInterface {
                     },
                     {
                         name: 'valor',
-                        type: 'number',
-                        isNullable: false,
+                        type: 'int',
                     },
                     {
                         name: 'data',
-                        type: 'datetime',
-                        default: "CURRENT_TIMESTAMP",
-                        isNullable: false              
+                        type: 'Date'             
                     },
                     {
                         name: 'active',

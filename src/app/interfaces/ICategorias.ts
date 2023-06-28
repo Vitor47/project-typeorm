@@ -1,6 +1,6 @@
 interface ICategorias {
     id?: number;
-    name: string;
+    nome: string;
     active: boolean;
 }
 
