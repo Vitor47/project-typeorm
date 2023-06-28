@@ -4,7 +4,10 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
 } from "typeorm";
+
+import Gastos_Categorias from "./Gastos_Categorias";
 
 @Entity("categorias")
 class Categorias {
@@ -22,6 +25,9 @@ class Categorias {
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @OneToMany(() => Gastos_Categorias, (photo) => photo.categorias)
+  categorias: Gastos_Categorias[]
 }
 
 export default Categorias;
